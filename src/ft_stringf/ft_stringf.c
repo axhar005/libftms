@@ -52,7 +52,7 @@ char	*sort_d(int val, char *str, size_t i)
 	{
 		new = ft_gnl_strjoin(new, &str[i + 2]);
 	}
-	ft_sfree(num);
+	mms_free(num);
 	return (new);
 }
 
@@ -87,7 +87,7 @@ char	*ft_stringf(const char *str, ...)
 		{
 			temp = new;
 			new = sort(arg, new, new[i + 1], i);
-			ft_sfree(temp);
+			mms_free(temp);
 		}
 		i++;
 	}

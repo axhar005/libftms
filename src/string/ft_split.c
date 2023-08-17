@@ -27,10 +27,10 @@ static char	**clean(char **tab)
 	i = 0;
 	while (tab[i])
 	{
-		free(tab[i]);
+		mms_free(tab[i]);
 		i++;
 	}
-	free(tab);
+	mms_free(tab);
 	return (NULL);
 }
 

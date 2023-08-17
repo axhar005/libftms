@@ -44,13 +44,11 @@ char	*ft_gnl_strjoin(char *s1, char *s2)
 	s1_len = ft_gnl_strlen(s1);
 	s2_len = ft_gnl_strlen(s2);
 	new = mms_alloc(s1_len + s2_len + 1, sizeof(char));
-	if (new == NULL)
-		return (new = ft_sfree(new));
 	while (s1_len + s2_len-- > s1_len)
 		new[s1_len + s2_len] = s2[s2_len];
 	while (s1_len--)
 		new[s1_len] = s1[s1_len];
 	if (*new == 0)
-		new = ft_sfree(new);
-	return (ft_sfree(s1), new);
+		new = mms_free(new);
+	return (mms_free(s1), new);
 }

@@ -6,7 +6,7 @@
 #    By: oboucher <oboucher@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/06 12:34:33 by oboucher          #+#    #+#              #
-#    Updated: 2023/08/12 11:22:03 by oboucher         ###   ########.fr        #
+#    Updated: 2023/08/17 13:27:43 by oboucher         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,9 @@ LIBMMS_DIR = ../libmms
 
 #--- COMMAND VARIABLES ---#
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror #-fsanitize=address -g
 RM = rm -f
-AR = ar rcs
+AR = ar -rcs
 MK = mkdir -p
 
 #--- COLORS ---#
@@ -103,6 +103,7 @@ ${OBJDIR}%.o : ${FT_STRINGF_DIR}%.c
 all				: 		$(NAME)
 
 $(NAME)			: 		libmms $(OBJDIR) $(ALL_OBJ)
+	@cp $(LIBMMS_DIR)/libmms.a $(NAME)
 	@$(AR) $(NAME) $(ALL_OBJ)
 	@echo "$(GREEN)libft sucessefully compiled 📁.${WHITE}"
 

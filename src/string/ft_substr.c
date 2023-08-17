@@ -1,4 +1,5 @@
 #include "../../inc/string.h"
+# include "../../../libmms/libmms.h"
 
 char	*ft_substr(char const *str, unsigned int start, size_t len)
 {
@@ -12,7 +13,7 @@ char	*ft_substr(char const *str, unsigned int start, size_t len)
 		return (ft_strdup(""));
 	if (len > str_len - start)
 		len = (str_len - start);
-	new = (char *)malloc(sizeof(char) * (len + 1));
+	new = mms_alloc(len + 1, sizeof(char));
 	if (new == NULL)
 		return (NULL);
 	ft_memcpy(new, str + start, len);
