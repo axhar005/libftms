@@ -1,5 +1,5 @@
+#include "../../../libmms/libmms.h"
 #include "../../inc/memory.h"
-# include "../../../libmms/libmms.h"
 
 static int	check_num(long int n)
 {
@@ -33,7 +33,7 @@ static char	*check(char *new, int i, int sign, long int num)
 }
 
 /// @brief interger to alphabet
-/// @param n it's a integer 
+/// @param n it's a integer
 char	*ft_itoa(int n)
 {
 	long int	num;

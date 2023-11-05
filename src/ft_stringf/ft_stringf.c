@@ -1,5 +1,5 @@
 #include "../../inc/ft_stringf.h"
-# include "../../../libmms/libmms.h"
+#include "../../../libmms/libmms.h"
 
 char	*sort_c(int val, char *str, size_t i)
 {
@@ -33,23 +33,6 @@ char	*sort_s(char *val, char *str, size_t i)
 	return (new);
 }
 
-char	*sort_S(char *val, char *str, size_t i)
-{
-	char	*new;
-
-	if (!str)
-		return (NULL);
-	new = mms_alloc(i + 1, sizeof(char));
-	if (!new)
-		return (NULL);
-	ft_memcpy(new, str, i);
-	new = ft_gnl_strjoin(new, val);
-	if (ft_strlen(&str[i + 2]) > 0)
-		new = ft_gnl_strjoin(new, &str[i + 2]);
-	mms_free(val);
-	return (new);
-}
-
 char	*sort_d(int val, char *str, size_t i)
 {
 	char	*new;
@@ -76,7 +59,7 @@ char	*sort(va_list arg, char *str, char c, size_t i)
 	else if (c == 's')
 		return (sort_s(va_arg(arg, char *), str, i));
 	else if (c == 'S')
-		return (sort_S(va_arg(arg, char *), str, i));
+		return (sort_cs(va_arg(arg, char *), str, i));
 	else if (c == 'd')
 		return (sort_d(va_arg(arg, int), str, i));
 	return (str);
