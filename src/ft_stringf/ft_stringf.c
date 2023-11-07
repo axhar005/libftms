@@ -55,13 +55,13 @@ char	*sort_d(int val, char *str, size_t i)
 char	*sort(va_list arg, char *str, char c, size_t i)
 {
 	if (c == 'c')
-		return (sort_c(va_arg(arg, int), str, i));
+		return (sort_c(va_arg(*arg, int), str, i));
 	else if (c == 's')
-		return (sort_s(va_arg(arg, char *), str, i));
+		return (sort_s(va_arg(*arg, char *), str, i));
 	else if (c == 'S')
-		return (sort_cs(va_arg(arg, char *), str, i));
+		return (sort_cs(va_arg(*arg, char *), str, i));
 	else if (c == 'd')
-		return (sort_d(va_arg(arg, int), str, i));
+		return (sort_d(va_arg(*arg, int), str, i));
 	return (str);
 }
 
@@ -84,7 +84,7 @@ char	*ft_stringf(const char *str, ...)
 		if (new[i] == '%')
 		{
 			temp = new;
-			new = sort(arg, new, new[i + 1], i);
+			new = sort(&arg, new, new[i + 1], i);
 			mms_free(temp);
 		}
 		i++;
