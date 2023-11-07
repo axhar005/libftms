@@ -52,7 +52,7 @@ char	*sort_d(int val, char *str, size_t i)
 	return (new);
 }
 
-char	*sort(va_list arg, char *str, char c, size_t i)
+char	*sort(va_list *arg, char *str, char c, size_t i)
 {
 	if (c == 'c')
 		return (sort_c(va_arg(*arg, int), str, i));
