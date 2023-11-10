@@ -33,6 +33,15 @@ static char	*ft_small_split(char *line, size_t *pos)
 	return (fnext_line);
 }
 
+static int	init_check(int fd, t_var *var)
+{
+	var->rd = 0;
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd > OPEN_MAX || read(fd, &var->buffer,
+			0) < 0)
+		return (0);
+	return (1);
+}
+
 /// @brief get the next line in a file
 /// @param fd is a file descriptor 
 /// @return the next line
@@ -41,9 +50,8 @@ char	*get_next_line(int fd)
 	static char	*line[OPEN_MAX];
 	t_var		var;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || fd > OPEN_MAX
-		|| read(fd, &var.buffer, 0) < 0)
-		return (line[fd] = mms_free(line[fd]), NULL);
+	if (init_check(fd, &var) == 0)
+		return (line[fd] = ft_sfree(line[fd]), NULL);
 	if (!line[fd])
 		line[fd] = mms_alloc(1, sizeof(char));
 	var.buffer = mms_alloc(BUFFER_SIZE + 1, sizeof(char));
