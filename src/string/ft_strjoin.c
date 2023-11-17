@@ -1,6 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: oboucher <oboucher@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/17 13:48:06 by oboucher          #+#    #+#             */
+/*   Updated: 2023/11/17 13:48:07 by oboucher         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../../inc/string.h"
-# include "../../../libmms/libmms.h"
+#include "../../../libmms/libmms.h"
 
 /// @brief join 2 string in to one new string 
 /// @param s1 is the initial string

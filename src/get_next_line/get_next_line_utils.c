@@ -1,5 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: oboucher <oboucher@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/17 13:41:00 by oboucher          #+#    #+#             */
+/*   Updated: 2023/11/17 13:41:04 by oboucher         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../inc/get_next_line.h"
-# include "../../../libmms/libmms.h"
+#include "../../../libmms/libmms.h"
 
 void	ft_gnl_bzero(void *b, size_t len)
 {

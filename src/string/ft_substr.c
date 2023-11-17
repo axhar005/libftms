@@ -1,5 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: oboucher <oboucher@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/17 13:48:57 by oboucher          #+#    #+#             */
+/*   Updated: 2023/11/17 13:48:59 by oboucher         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../inc/string.h"
-# include "../../../libmms/libmms.h"
+#include "../../../libmms/libmms.h"
 
 char	*ft_substr(char const *str, unsigned int start, size_t len)
 {
